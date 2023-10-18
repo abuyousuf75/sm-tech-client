@@ -1,0 +1,18 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;700;800&display=swap');
+
+.container{
+    max-width: 1350px!important;
+    margin: 0 auto;
+}
+body{
+    font-family: 'Poppins', sans-serif;
+}
+.awssld__content{
+    border-radius: 10px;
+}
+ul.menu.menu-sm.dropdown-content.mt-3.z-\[1\].p-2.shadow.bg-base-100.rounded-box.w-52 {
+    z-index: 99;
+}
