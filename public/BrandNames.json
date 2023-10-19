@@ -1,0 +1,42 @@
+[
+    {
+        "id": 1,
+        "image": "https://d61s2hjse0ytn.cloudfront.net/brands/Apple_Brand.webp",
+        "brand": "Apple"
+    },
+    {
+        "id": 2,
+        "image": "https://d61s2hjse0ytn.cloudfront.net/brands/Xiaomi_Brand.webp",
+        "brand": "Xiaomi"
+    },
+    {
+        "id": 3,
+        "image": "https://d61s2hjse0ytn.cloudfront.net/brands/Samsung_Brand.webp",
+        "brand": "Samsung"
+    },
+    {
+        "id": 4,
+        "image": "https://d61s2hjse0ytn.cloudfront.net/brands/Realme_Brand.webp",
+        "brand": "Realme"
+    },
+    {
+        "id": 5,
+        "image": "https://d61s2hjse0ytn.cloudfront.net/brands/Oppo_Brand.webp",
+        "brand": "Oppo"
+    },
+    {
+        "id": 6,
+        "image": "https://d61s2hjse0ytn.cloudfront.net/brands/Huawei.webp",
+        "brand": "Huawei"
+    },
+    {
+        "id": 7,
+        "image": "https://d61s2hjse0ytn.cloudfront.net/brands/Hp.webp",
+        "brand": "Hp"
+    },
+    {
+        "id": 8,
+        "image": "https://d61s2hjse0ytn.cloudfront.net/brands/Baseus_Brand.webp",
+        "brand": "Baseus"
+    }
+]

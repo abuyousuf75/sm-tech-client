@@ -7,6 +7,9 @@
     max-width: 1350px!important;
     margin: 0 auto;
 }
+.menu .active{
+    color: #fe6c2a;
+}
 body{
     font-family: 'Poppins', sans-serif;
 }
@@ -15,4 +18,7 @@ body{
 }
 ul.menu.menu-sm.dropdown-content.mt-3.z-\[1\].p-2.shadow.bg-base-100.rounded-box.w-52 {
     z-index: 99;
+}
+.shadow{
+    box-shadow: 0 8px 24px #0000000d;
 }
