@@ -5,7 +5,7 @@ import slider2 from '../assets/bannerImg/Galaxy_Watch_5.webp';
 import slider3 from '../assets/bannerImg/Slider_2_Main.webp';
 const Banner = () => {
     const slider = (
-        <AwesomeSlider  cssModule={AwsSliderStyles}>
+        <AwesomeSlider  cssModule={AwsSliderStyles} >
           <div  data-src={slider1} />
           <div data-src={slider2} />
           <div data-src={slider3}/>
@@ -20,7 +20,7 @@ const Banner = () => {
              
              {/* for slider */}
            <div className=" md:w-[70%] swiper-wrapper swiper">
-            {slider}
+            {slider }
            </div>
            {/* for hot deals */}
            <div className="md:w-[25%] pt-16 md:pt-0 bg-[#f5f5f5] p-6 rounded-lg md:absolute md:right-0">
