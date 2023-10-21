@@ -16,15 +16,12 @@ const AddProducts = () => {
         const photo = form.photo.value;
         const newProducts = { name, ratting, brand, price, category, details, photo };
 
-
-        console.log(newProducts);
-
-        fetch('http://localhost:5000/brand', {
+        fetch('http://localhost:5000/products', {
             method: "POST",
             headers: {
                 "content-type": "application/json"
             },
-            body: JSON.stringify( newProducts)
+            body: JSON.stringify(newProducts)
         })
             .then(res => res.json())
             .then(data => {
@@ -41,6 +38,8 @@ const AddProducts = () => {
                 }
             })
         form.reset();
+
+            
     }
 
 

@@ -1,18 +1,19 @@
-import { Link } from "react-router-dom";
+
+import { useEffect } from "react";
+import { Link, useLoaderData, useParams} from "react-router-dom";
 
 
+const BrandDetail = ({brands}) => {
 
 
-const BrandDetail = ({brand}) => {
-   
-  const {brand_name, image,id} = brand;
-   
+    const { brand, photo  ,name } = brands;
+    
 
     return (
-       <Link to ={`/brand/${id}`}>
+       <Link to ={`products/${brand}`}>
          <div className="border">
-           <p className="text-xl font-bold text-center mt-10">{brand_name}</p>
-            <img src={image} alt="brandImg" />
+           <p className="text-xl font-bold text-center mt-10">{name}</p>
+            <img src={photo} alt="brandImg" />
 
         </div>
        </Link>
