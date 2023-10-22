@@ -6,7 +6,7 @@ import { AuthContext } from "../Route/AuthProvider";
 
 
 const Login = () => {
-    const {loginUser,googleLogin} = useContext(AuthContext);
+    const {loginUser,googleLogin,githubLogin} = useContext(AuthContext);
 
     const [showPassword, setPassword] = useState(false);
 
@@ -35,6 +35,10 @@ const Login = () => {
     // google login
     const handelGoogleLogin = () =>{
         googleLogin()
+    }
+    // github login
+    const handelGithubLogin = () =>{
+        githubLogin()
     }
 
     return (
@@ -78,7 +82,7 @@ const Login = () => {
                     {/* forr social login */}
                     <div className="mt-4 mb-4">
                     <button onClick={handelGoogleLogin} className="btn mb-4 text-white w-full btn-success border-0 rounded-md bg-[#fe6c2a] hover:bg-[#e55189] capitalize">Login With Google</button>
-                    <button className="btn text-white w-full btn-success border-0 rounded-md bg-[#fe6c2a] hover:bg-[#e55189] capitalize">Login With Github</button>
+                    <button onClick={handelGithubLogin} className="btn text-white w-full btn-success border-0 rounded-md bg-[#fe6c2a] hover:bg-[#e55189] capitalize">Login With Github</button>
                     </div>
                 </div>
             </div>

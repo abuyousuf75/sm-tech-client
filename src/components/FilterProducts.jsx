@@ -1,7 +1,8 @@
+import { Link } from "react-router-dom";
 
 const FilterProducts = ({Aproduct}) => {
     
- const {name, ratting, brand, price, category, details, photo} =Aproduct;
+ const {name, ratting, brand, price, category, details, photo ,_id} =Aproduct;
     
    
     return (
@@ -36,13 +37,16 @@ const FilterProducts = ({Aproduct}) => {
                
             </div>
             <div className="flex justify-center gap-4 pt-4 pb-4">
-            <button className="btn capitalize text-[#fff] text-xl bg-[#fe6c2a]">Details</button>
-            <button className="btn capitalize  text-xl">Update</button>
+           <Link to ={`/details/${_id}`}>
+           <button className="btn capitalize text-[#fff] text-xl bg-[#fe6c2a]">Details</button>
+           </Link>
+           <Link to ={`/update/${_id}`}>
+           <button className="btn capitalize  text-xl">Update</button></Link>
             </div>
         </div>
 
         </div>
-        
+    
        
     );
 };
