@@ -1,5 +1,6 @@
 import { useContext, useEffect, useState } from "react";
-import { useLoaderData, useParams } from "react-router-dom";
+import { FaArrowLeft } from "react-icons/fa";
+import { Link, useLoaderData, useParams } from "react-router-dom";
 
 
 
@@ -24,7 +25,7 @@ const ProductsDetails = () => {
 
 
     const newItems = detail.find(item => item._id === id) || {}
-    const { name, ratting, brand, price, category,details, photo} = newItems
+    const { name, ratting, brand, price,details, photo} = newItems
 
     if (looding) {
         return <div className="conatiner text-center">
@@ -36,12 +37,24 @@ const ProductsDetails = () => {
     }
 
     return (
-        <div className="container">
-            <h2 className="text-4xl font-bold text-center md:pt-10 md:pb-16">Products Details</h2>
-            <div className="md:grid md:grid-cols-2 gap-4  items-center justify-center ">
-
-                <img src={photo} alt="" />
-
+        <div className="container pt-10 pb-10">
+             <Link className="" to={`/products/${brand}`}><button className="text-xl font-semibold flex justify-center items-center"> <FaArrowLeft /> Back to Previous</button></Link>
+            <h2 className="text-center font-bold text-4xl md:mb-10 mb-4">Products details</h2>
+            <div className="grid md:grid-cols-2  ">
+                <div className="border-2 md:w-[500px] flex justify-center items-center text-center">
+                    <img src={photo} alt="photo" />
+                </div>
+                <div className="bg-[#f5f5f5] border-2 p-6">
+                    <div className="flex justify-between">
+                    <h2 className="text-2xl font-bold">{name}</h2>
+                    <h2 className="text-2xl font-bold">৳{price}</h2>
+                    </div>
+                    <h3 className="text-xl font-bold">Brand : <span className="text-[#fe6c2a]">{brand}</span></h3>
+                    <p className="text-xl pt-3">{details}</p>
+                   <div className="pt-6">
+                   <button className="btn hover:bg-black bg-[#fe6c2a] text-[#fff] ">Add to cart</button>
+                   </div>
+                </div>
             </div>
         </div>
     );

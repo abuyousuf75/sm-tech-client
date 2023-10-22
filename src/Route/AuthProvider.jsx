@@ -3,13 +3,14 @@ import { GithubAuthProvider, GoogleAuthProvider, createUserWithEmailAndPassword,
 import auth from "../firbaseKey";
 import { useState } from "react";
 import { useEffect } from "react";
+import { useLocation, useNavigate } from "react-router-dom";
 
 export const AuthContext = createContext(null)
 
 const AuthProvider = ({children}) => {
     const [user, setUser] = useState(null);
-    const [looding, setLooding] = useState(true)
-
+    const [looding, setLooding] = useState(true);
+   
     // crete user via register
 
     const createUser = (email,password) =>{
@@ -32,6 +33,8 @@ const AuthProvider = ({children}) => {
 
 const githubLogin = () =>{
     setLooding(true)
+    
+   
     return signInWithPopup(auth, githubProvider)
 }
 

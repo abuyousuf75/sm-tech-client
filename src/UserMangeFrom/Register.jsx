@@ -2,20 +2,22 @@ import { useContext, useState } from "react";
 import { AuthContext } from "../Route/AuthProvider";
 import Swal from "sweetalert2";
 import { FaEye, FaEyeSlash } from "react-icons/fa";
+import { useNavigate } from "react-router-dom";
 
 
 
 const Register = () => {
     const { createUser } = useContext(AuthContext);
-    const [registerError, setRegisterError] = useState('');
-    const [showPassword, setPassword] = useState(false)
+    // const [registerError, setRegisterError] = useState('');
+    const [showPassword, setPassword] = useState(false);
+    const navigate = useNavigate();
 
     //handelRegister
     const handelRegister = (event) => {
 
         event.preventDefault()
         // reset from
-        setRegisterError('');
+        // setRegisterError('');
         const form = event.target;
         // get user info
         const userName = form.name.value;
@@ -51,7 +53,8 @@ const Register = () => {
         
         else{
            
-             form.reset()
+             form.reset();
+             
         }
 
         createUser(userEmail, userPassword)
@@ -63,6 +66,7 @@ const Register = () => {
                     text: 'User Creted Sucessfuly ',
     
                 })
+                navigate('/')
 
                 // send uer info after creted sucessfuly on our mongoDb
 
@@ -76,14 +80,23 @@ const Register = () => {
                 })
                 .then(res => res.json())
                 .then(data => {
-                    console.log(data)
+                    console.log(data);
+                    Swal.fire({
+                icon: 'success',
+                text: "Login successfuly",
+
+            })
+
                 })
 
 
             })
             .catch(err => {
-                console.error(err);
-                setRegisterError(err.message)
+                Swal.fire({
+                    icon: 'error',
+                    text: err.message,
+    
+                })
             })
     }
 
@@ -135,9 +148,7 @@ const Register = () => {
                                 <button className="btn text-white btn-success border-0 rounded-md bg-[#fe6c2a] capitalize">Register</button>
                             </div>
                         </form>
-                        {
-                            registerError && <p className="text-xl text-red-500">{registerError}</p>
-                        }
+                        
                     </div>
                 </div>
             </div>

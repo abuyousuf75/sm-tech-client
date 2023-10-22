@@ -1,12 +1,16 @@
 import { useContext } from "react";
 import { useState } from "react";
 import { FaEye, FaEyeSlash } from "react-icons/fa";
-import { Link } from "react-router-dom";
+import { Link, useLocation, useNavigate } from "react-router-dom";
 import { AuthContext } from "../Route/AuthProvider";
+import Swal from "sweetalert2";
 
 
 const Login = () => {
     const {loginUser,googleLogin,githubLogin} = useContext(AuthContext);
+    const location = useLocation()
+    const navigate = useNavigate()
+    console.log(location)
 
     const [showPassword, setPassword] = useState(false);
 
@@ -26,19 +30,38 @@ const Login = () => {
         loginUser(userEmail,userPassword)
         .then(res => {
             console.log(res.user)
+            // navigate after login 
+            navigate(location?.state ?  location.state : '/')
+            
+
+            form.reset()
         })
         .catch(err => {
-            console.error(err)
+            Swal.fire({
+                icon: 'error',
+                text: err.message,
+
+            })
+            form.reset()
         })
 
     }
     // google login
     const handelGoogleLogin = () =>{
-        googleLogin()
+       googleLogin()
+       .then(() => {
+        navigate(location.state ? location.state :'/')
+      })
+       
+       
     }
     // github login
     const handelGithubLogin = () =>{
         githubLogin()
+        .then(() =>{
+            navigate(location.state ? location.state :'/')
+        })
+       
     }
 
     return (
