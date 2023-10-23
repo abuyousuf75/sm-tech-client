@@ -19,7 +19,7 @@ const ProductsDetails = () => {
     
 
     useEffect(() => {
-        fetch('http://localhost:5000/details')
+        fetch('https://sm-tech-backend.vercel.app/details')
             .then(res => res.json())
             .then(data => {
                 setDetails(data)
@@ -36,7 +36,7 @@ const ProductsDetails = () => {
     const handelAddTocart = () =>{
         const product = {...newItems,email:email}
             console.log(product)
-        fetch('http://localhost:5000/myCart',{
+        fetch('https://sm-tech-backend.vercel.app/myCart',{
             method : 'POST',
             headers : {
                 "content-type" : "application/json"

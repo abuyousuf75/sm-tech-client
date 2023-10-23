@@ -27,7 +27,7 @@ const CartProducts = ({items,setProducts,remaingProducts}) => {
             if (result.isConfirmed) {
            
 
-            fetch(`http://localhost:5000/myCart/${_id}`,{
+            fetch(`https://sm-tech-backend.vercel.app/myCart/${_id}`,{
                 method : "DELETE"
             })
             .then(res => res.json())

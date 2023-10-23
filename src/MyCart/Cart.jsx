@@ -17,7 +17,7 @@ const Cart = () => {
     const [products , setProducts] = useState([]);
 
     useEffect(() =>{
-        fetch(`http://localhost:5000/myCart/${user?.email}`)
+        fetch(`https://sm-tech-backend.vercel.app/myCart/${user?.email}`)
         .then(res => res.json())
         .then(data => setProducts(data))
     },[user])

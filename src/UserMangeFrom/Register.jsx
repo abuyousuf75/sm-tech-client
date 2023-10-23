@@ -71,7 +71,7 @@ const Register = () => {
                 // send uer info after creted sucessfuly on our mongoDb
 
                 const user = { userName, userImg, userEmail, userPassword};
-                fetch('http://localhost:5000/user',{
+                fetch('https://sm-tech-backend.vercel.app/user',{
                     method : "POST",
                     headers : {
                         "content-type" : "application/json"

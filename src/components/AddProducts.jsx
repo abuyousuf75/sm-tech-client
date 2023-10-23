@@ -16,7 +16,7 @@ const AddProducts = () => {
         const photo = form.photo.value;
         const newProducts = { name, ratting, brand, price, category, details, photo };
 
-        fetch('http://localhost:5000/products', {
+        fetch('https://sm-tech-backend.vercel.app/products', {
             method: "POST",
             headers: {
                 "content-type": "application/json"

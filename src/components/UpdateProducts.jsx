@@ -20,7 +20,7 @@ const handelUpdateProducts = (event) =>{
         const photo = form.photo.value;
         const updateProducts = { name, ratting, brand, price, category, details, photo };
 
-        fetch(`http://localhost:5000/products/${brand}/${_id}`, {
+        fetch(`https://sm-tech-backend.vercel.app/products/${brand}/${_id}`, {
             method: "PUT",
             headers: {
                 "content-type": "application/json"

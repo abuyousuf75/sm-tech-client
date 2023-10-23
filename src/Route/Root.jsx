@@ -23,30 +23,30 @@ const router = createBrowserRouter([
         {
            path : "/",
            element: <Home></Home>,
-           loader : () => fetch('http://localhost:5000/pBrands')
+           loader : () => fetch('https://sm-tech-backend.vercel.app/pBrands')
            
         },
         {
           path : "/products/:brand",
           element : <BrandCollection></BrandCollection>,
-          loader : ({params}) => fetch(`http://localhost:5000/products/${params.brand}`)
+          loader : ({params}) => fetch(`https://sm-tech-backend.vercel.app/products/${params.brand}`)
       },
         {
           path : "/update/:id",
           element :<PrivateRoute> <UpdateProducts></UpdateProducts></PrivateRoute>,
-          loader : ({params}) => fetch(`http://localhost:5000/products/${params.brand}/${params.id}`)
+          loader : ({params}) => fetch(`https://sm-tech-backend.vercel.app/products/${params.brand}/${params.id}`)
           
       },
         {
           path : "/details",
           element : <ProductsDetails></ProductsDetails>,
-          loader : () => fetch('http://localhost:5000/products')
+          loader : () => fetch('https://sm-tech-backend.vercel.app/products')
 
       },
         {
           path : "/details/:id",
           element :<PrivateRoute> <ProductsDetails></ProductsDetails></PrivateRoute>,
-          loader : ({params}) => fetch(`http://localhost:5000/products/${params.id}`)
+          loader : ({params}) => fetch(`https://sm-tech-backend.vercel.app/products/${params.id}`)
 
       },
         {
@@ -57,7 +57,7 @@ const router = createBrowserRouter([
         {
            path : "/myCart",
           element: <PrivateRoute><Cart></Cart></PrivateRoute>,
-          loader : () => fetch('http://localhost:5000/myCart')
+          loader : () => fetch('https://sm-tech-backend.vercel.app/myCart')
         },
         {
            path : "/login",
