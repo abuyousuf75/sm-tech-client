@@ -1,17 +1,22 @@
-import { useContext, useEffect, useState } from "react";
+import {  useContext, useEffect, useState } from "react";
 import { FaArrowLeft } from "react-icons/fa";
-import { Link, useLoaderData, useParams } from "react-router-dom";
+import { Link,  useParams } from "react-router-dom";
+import Swal from "sweetalert2";
+import { AuthContext } from "../Route/AuthProvider";
 
 
 
 const ProductsDetails = () => {
     const [looding, setLooding] = useState(true);
+    const {user} = useContext(AuthContext);
+    const email = user.email;
+    console.log(email)
 
     const { id } = useParams();
 
     const [detail, setDetails] = useState([])
 
-    console.log(id)
+    
 
     useEffect(() => {
         fetch('http://localhost:5000/details')
@@ -25,7 +30,42 @@ const ProductsDetails = () => {
 
 
     const newItems = detail.find(item => item._id === id) || {}
-    const { name, ratting, brand, price,details, photo} = newItems
+    const { name, brand, price,details, photo} = newItems;
+    
+  
+    const handelAddTocart = () =>{
+        const product = {...newItems,email:email}
+            console.log(product)
+        fetch('http://localhost:5000/myCart',{
+            method : 'POST',
+            headers : {
+                "content-type" : "application/json"
+            },
+            body : JSON.stringify(product)
+        })
+        .then(res => res.json())
+        .then(data => {
+            if(data.insertedId){
+                Swal.fire({
+                    icon: 'success',
+                    text: "Sucessfuly added to cart",
+    
+                })
+            }
+           
+        })
+        .catch(error => {
+           if(error){
+            Swal.fire({
+                icon: 'error',
+                text: "This item alredy added",
+
+            })
+            return
+           }
+        })
+    }
+
 
     if (looding) {
         return <div className="conatiner text-center">
@@ -52,7 +92,7 @@ const ProductsDetails = () => {
                     <h3 className="text-xl font-bold">Brand : <span className="text-[#fe6c2a]">{brand}</span></h3>
                     <p className="text-xl pt-3">{details}</p>
                    <div className="pt-6">
-                   <button className="btn hover:bg-black bg-[#fe6c2a] text-[#fff] ">Add to cart</button>
+                   <button onClick={handelAddTocart} className="btn hover:bg-black bg-[#fe6c2a] text-[#fff] ">Add to cart</button>
                    </div>
                 </div>
             </div>

@@ -5,7 +5,8 @@ import { useContext } from "react";
 import { AuthContext } from "../Route/AuthProvider";
 const Navbar = () => {
 
-    const { user, logOut } = useContext(AuthContext);
+    const { user, logOut} = useContext(AuthContext);
+  
     console.log(user)
 
     const links = <>
@@ -19,6 +20,9 @@ const Navbar = () => {
     const handelLogout = () => {
         logOut()
     }
+//upadte user
+
+
     return (
         <section className=" bg-[#2c2b49]">
             <div className="navbar container text-[#f20231] py-4">

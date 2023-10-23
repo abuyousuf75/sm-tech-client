@@ -10,6 +10,7 @@ import Register from "../UserMangeFrom/Register";
 import UpdateProducts from "../components/UpdateProducts";
 import ProductsDetails from "../components/ProductsDetails";
 import PrivateRoute from "./PrivateRoute";
+import { FaTeethOpen } from "react-icons/fa";
 
 
 
@@ -55,7 +56,8 @@ const router = createBrowserRouter([
         
         {
            path : "/myCart",
-          element: <Cart></Cart>
+          element: <PrivateRoute><Cart></Cart></PrivateRoute>,
+          loader : () => fetch('http://localhost:5000/myCart')
         },
         {
            path : "/login",
