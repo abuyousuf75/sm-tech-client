@@ -1,8 +1,16 @@
-# React + Vite
+project info : this site devolop by mern technology. 
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
 
-Currently, two official plugins are available:
+features of project:
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+
+
+*1.Authentication : user can't acces private route if they are not login via register or google , github;
+
+*2. Dynamic features : all products come from database. 
+
+*3. user can added products and they also access to delete items from cart.
+
+*4.user also can add products if they want.
+
+*5. all user information was stored in database.

@@ -12,12 +12,8 @@ import { FaArrowLeft } from "react-icons/fa";
 
 
 const BrandCollection = () => {
-   
-     
-    const allProducts = useLoaderData();
-   console.log(allProducts)
-    
 
+    const allProducts = useLoaderData();
 
    const slider = (
     <AwesomeSlider  cssModule={AwsSliderStyles} >
@@ -26,7 +22,6 @@ const BrandCollection = () => {
       <div data-src={slider3}/>
     </AwesomeSlider>
     );
-
 
     return (
         <div className="container">

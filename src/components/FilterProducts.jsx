@@ -2,7 +2,7 @@ import { Link } from "react-router-dom";
 
 const FilterProducts = ({Aproduct}) => {
     
- const {name, ratting, brand, price, category, details, photo ,_id} =Aproduct;
+ const {name, ratting, brand, price, category , photo ,_id} =Aproduct;
     
    
     return (
