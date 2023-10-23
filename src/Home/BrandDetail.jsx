@@ -8,6 +8,7 @@ const BrandDetail = ({brands}) => {
 
     const { brand, photo  ,name } = brands;
     
+    
 
     return (
        <Link to ={`products/${brand}`}>

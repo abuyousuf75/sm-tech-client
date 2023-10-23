@@ -3,6 +3,7 @@ import logo from '../assets/logo.png';
 import users from '../assets/user.png';
 import { useContext } from "react";
 import { AuthContext } from "../Route/AuthProvider";
+
 const Navbar = () => {
 
     const { user, logOut} = useContext(AuthContext);
@@ -20,7 +21,6 @@ const Navbar = () => {
     const handelLogout = () => {
         logOut()
     }
-//upadte user
 
 
     return (

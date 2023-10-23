@@ -18,10 +18,7 @@ const AuthProvider = ({children}) => {
         return createUserWithEmailAndPassword (auth, email,password);
     }
   
-    // const updateUser = () =>{
-    //     setLooding(true);
-    //     return updateProfile (auth.currentUser);
-    // }
+    
 
  // login user via google
  const googleProvider = new GoogleAuthProvider();
